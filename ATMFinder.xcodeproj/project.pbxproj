@@ -1,0 +1,659 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		521CCA5E2BBAAEA600C0CED0 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521CCA5D2BBAAEA600C0CED0 /* SearchViewController.swift */; };
+		521CCA612BBABF1400C0CED0 /* OverlayContainer in Frameworks */ = {isa = PBXBuildFile; productRef = 521CCA602BBABF1400C0CED0 /* OverlayContainer */; };
+		521CCA642BBAC8DA00C0CED0 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521CCA632BBAC8DA00C0CED0 /* Extensions.swift */; };
+		52FE6F252BB9645500690434 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FE6F242BB9645500690434 /* AppDelegate.swift */; };
+		52FE6F272BB9645500690434 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FE6F262BB9645500690434 /* SceneDelegate.swift */; };
+		52FE6F292BB9645500690434 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FE6F282BB9645500690434 /* MapViewController.swift */; };
+		52FE6F2E2BB9645900690434 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52FE6F2D2BB9645900690434 /* Assets.xcassets */; };
+		52FE6F312BB9645900690434 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52FE6F2F2BB9645900690434 /* LaunchScreen.storyboard */; };
+		52FE6F3C2BB9645A00690434 /* ATMFinderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FE6F3B2BB9645A00690434 /* ATMFinderTests.swift */; };
+		52FE6F462BB9645A00690434 /* ATMFinderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FE6F452BB9645A00690434 /* ATMFinderUITests.swift */; };
+		52FE6F482BB9645A00690434 /* ATMFinderUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FE6F472BB9645A00690434 /* ATMFinderUITestsLaunchTests.swift */; };
+		52FE6F562BB96BB100690434 /* LBTATools in Frameworks */ = {isa = PBXBuildFile; productRef = 52FE6F552BB96BB100690434 /* LBTATools */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		52FE6F382BB9645A00690434 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 52FE6F192BB9645400690434 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 52FE6F202BB9645500690434;
+			remoteInfo = ATMFinder;
+		};
+		52FE6F422BB9645A00690434 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 52FE6F192BB9645400690434 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 52FE6F202BB9645500690434;
+			remoteInfo = ATMFinder;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		521CCA5D2BBAAEA600C0CED0 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		521CCA632BBAC8DA00C0CED0 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = ../../../../../Downloads/Extensions.swift; sourceTree = "<group>"; };
+		52FE6F212BB9645500690434 /* ATMFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ATMFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		52FE6F242BB9645500690434 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		52FE6F262BB9645500690434 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		52FE6F282BB9645500690434 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		52FE6F2D2BB9645900690434 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		52FE6F302BB9645900690434 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		52FE6F322BB9645900690434 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52FE6F372BB9645A00690434 /* ATMFinderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ATMFinderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		52FE6F3B2BB9645A00690434 /* ATMFinderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ATMFinderTests.swift; sourceTree = "<group>"; };
+		52FE6F412BB9645A00690434 /* ATMFinderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ATMFinderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		52FE6F452BB9645A00690434 /* ATMFinderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ATMFinderUITests.swift; sourceTree = "<group>"; };
+		52FE6F472BB9645A00690434 /* ATMFinderUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ATMFinderUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		52FE6F1E2BB9645500690434 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52FE6F562BB96BB100690434 /* LBTATools in Frameworks */,
+				521CCA612BBABF1400C0CED0 /* OverlayContainer in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52FE6F342BB9645A00690434 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52FE6F3E2BB9645A00690434 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		521CCA622BBAC8BA00C0CED0 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				521CCA632BBAC8DA00C0CED0 /* Extensions.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		52FE6F182BB9645400690434 = {
+			isa = PBXGroup;
+			children = (
+				52FE6F232BB9645500690434 /* ATMFinder */,
+				52FE6F3A2BB9645A00690434 /* ATMFinderTests */,
+				52FE6F442BB9645A00690434 /* ATMFinderUITests */,
+				52FE6F222BB9645500690434 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		52FE6F222BB9645500690434 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				52FE6F212BB9645500690434 /* ATMFinder.app */,
+				52FE6F372BB9645A00690434 /* ATMFinderTests.xctest */,
+				52FE6F412BB9645A00690434 /* ATMFinderUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		52FE6F232BB9645500690434 /* ATMFinder */ = {
+			isa = PBXGroup;
+			children = (
+				521CCA622BBAC8BA00C0CED0 /* Utils */,
+				52FE6F242BB9645500690434 /* AppDelegate.swift */,
+				52FE6F262BB9645500690434 /* SceneDelegate.swift */,
+				52FE6F282BB9645500690434 /* MapViewController.swift */,
+				521CCA5D2BBAAEA600C0CED0 /* SearchViewController.swift */,
+				52FE6F2D2BB9645900690434 /* Assets.xcassets */,
+				52FE6F2F2BB9645900690434 /* LaunchScreen.storyboard */,
+				52FE6F322BB9645900690434 /* Info.plist */,
+			);
+			path = ATMFinder;
+			sourceTree = "<group>";
+		};
+		52FE6F3A2BB9645A00690434 /* ATMFinderTests */ = {
+			isa = PBXGroup;
+			children = (
+				52FE6F3B2BB9645A00690434 /* ATMFinderTests.swift */,
+			);
+			path = ATMFinderTests;
+			sourceTree = "<group>";
+		};
+		52FE6F442BB9645A00690434 /* ATMFinderUITests */ = {
+			isa = PBXGroup;
+			children = (
+				52FE6F452BB9645A00690434 /* ATMFinderUITests.swift */,
+				52FE6F472BB9645A00690434 /* ATMFinderUITestsLaunchTests.swift */,
+			);
+			path = ATMFinderUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		52FE6F202BB9645500690434 /* ATMFinder */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 52FE6F4B2BB9645A00690434 /* Build configuration list for PBXNativeTarget "ATMFinder" */;
+			buildPhases = (
+				52FE6F1D2BB9645500690434 /* Sources */,
+				52FE6F1E2BB9645500690434 /* Frameworks */,
+				52FE6F1F2BB9645500690434 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ATMFinder;
+			packageProductDependencies = (
+				52FE6F552BB96BB100690434 /* LBTATools */,
+				521CCA602BBABF1400C0CED0 /* OverlayContainer */,
+			);
+			productName = ATMFinder;
+			productReference = 52FE6F212BB9645500690434 /* ATMFinder.app */;
+			productType = "com.apple.product-type.application";
+		};
+		52FE6F362BB9645A00690434 /* ATMFinderTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 52FE6F4E2BB9645A00690434 /* Build configuration list for PBXNativeTarget "ATMFinderTests" */;
+			buildPhases = (
+				52FE6F332BB9645A00690434 /* Sources */,
+				52FE6F342BB9645A00690434 /* Frameworks */,
+				52FE6F352BB9645A00690434 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				52FE6F392BB9645A00690434 /* PBXTargetDependency */,
+			);
+			name = ATMFinderTests;
+			productName = ATMFinderTests;
+			productReference = 52FE6F372BB9645A00690434 /* ATMFinderTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		52FE6F402BB9645A00690434 /* ATMFinderUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 52FE6F512BB9645A00690434 /* Build configuration list for PBXNativeTarget "ATMFinderUITests" */;
+			buildPhases = (
+				52FE6F3D2BB9645A00690434 /* Sources */,
+				52FE6F3E2BB9645A00690434 /* Frameworks */,
+				52FE6F3F2BB9645A00690434 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				52FE6F432BB9645A00690434 /* PBXTargetDependency */,
+			);
+			name = ATMFinderUITests;
+			productName = ATMFinderUITests;
+			productReference = 52FE6F412BB9645A00690434 /* ATMFinderUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		52FE6F192BB9645400690434 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					52FE6F202BB9645500690434 = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
+					52FE6F362BB9645A00690434 = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = 52FE6F202BB9645500690434;
+					};
+					52FE6F402BB9645A00690434 = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = 52FE6F202BB9645500690434;
+					};
+				};
+			};
+			buildConfigurationList = 52FE6F1C2BB9645400690434 /* Build configuration list for PBXProject "ATMFinder" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 52FE6F182BB9645400690434;
+			packageReferences = (
+				52FE6F542BB96BB100690434 /* XCRemoteSwiftPackageReference "LBTATools" */,
+				521CCA5F2BBABF1400C0CED0 /* XCRemoteSwiftPackageReference "OverlayContainer" */,
+			);
+			productRefGroup = 52FE6F222BB9645500690434 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				52FE6F202BB9645500690434 /* ATMFinder */,
+				52FE6F362BB9645A00690434 /* ATMFinderTests */,
+				52FE6F402BB9645A00690434 /* ATMFinderUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		52FE6F1F2BB9645500690434 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52FE6F312BB9645900690434 /* LaunchScreen.storyboard in Resources */,
+				52FE6F2E2BB9645900690434 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52FE6F352BB9645A00690434 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52FE6F3F2BB9645A00690434 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		52FE6F1D2BB9645500690434 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				521CCA642BBAC8DA00C0CED0 /* Extensions.swift in Sources */,
+				52FE6F292BB9645500690434 /* MapViewController.swift in Sources */,
+				52FE6F252BB9645500690434 /* AppDelegate.swift in Sources */,
+				521CCA5E2BBAAEA600C0CED0 /* SearchViewController.swift in Sources */,
+				52FE6F272BB9645500690434 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52FE6F332BB9645A00690434 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52FE6F3C2BB9645A00690434 /* ATMFinderTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52FE6F3D2BB9645A00690434 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52FE6F462BB9645A00690434 /* ATMFinderUITests.swift in Sources */,
+				52FE6F482BB9645A00690434 /* ATMFinderUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		52FE6F392BB9645A00690434 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 52FE6F202BB9645500690434 /* ATMFinder */;
+			targetProxy = 52FE6F382BB9645A00690434 /* PBXContainerItemProxy */;
+		};
+		52FE6F432BB9645A00690434 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 52FE6F202BB9645500690434 /* ATMFinder */;
+			targetProxy = 52FE6F422BB9645A00690434 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		52FE6F2F2BB9645900690434 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				52FE6F302BB9645900690434 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		52FE6F492BB9645A00690434 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		52FE6F4A2BB9645A00690434 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		52FE6F4C2BB9645A00690434 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LB584B36MB;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ATMFinder/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vmachado.developer.ATMFinder;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		52FE6F4D2BB9645A00690434 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LB584B36MB;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ATMFinder/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vmachado.developer.ATMFinder;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		52FE6F4F2BB9645A00690434 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LB584B36MB;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vmachado.developer.ATMFinderTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ATMFinder.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ATMFinder";
+			};
+			name = Debug;
+		};
+		52FE6F502BB9645A00690434 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LB584B36MB;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vmachado.developer.ATMFinderTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ATMFinder.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ATMFinder";
+			};
+			name = Release;
+		};
+		52FE6F522BB9645A00690434 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LB584B36MB;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vmachado.developer.ATMFinderUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ATMFinder;
+			};
+			name = Debug;
+		};
+		52FE6F532BB9645A00690434 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LB584B36MB;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vmachado.developer.ATMFinderUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ATMFinder;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		52FE6F1C2BB9645400690434 /* Build configuration list for PBXProject "ATMFinder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52FE6F492BB9645A00690434 /* Debug */,
+				52FE6F4A2BB9645A00690434 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		52FE6F4B2BB9645A00690434 /* Build configuration list for PBXNativeTarget "ATMFinder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52FE6F4C2BB9645A00690434 /* Debug */,
+				52FE6F4D2BB9645A00690434 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		52FE6F4E2BB9645A00690434 /* Build configuration list for PBXNativeTarget "ATMFinderTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52FE6F4F2BB9645A00690434 /* Debug */,
+				52FE6F502BB9645A00690434 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		52FE6F512BB9645A00690434 /* Build configuration list for PBXNativeTarget "ATMFinderUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52FE6F522BB9645A00690434 /* Debug */,
+				52FE6F532BB9645A00690434 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		521CCA5F2BBABF1400C0CED0 /* XCRemoteSwiftPackageReference "OverlayContainer" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/applidium/OverlayContainer.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+		52FE6F542BB96BB100690434 /* XCRemoteSwiftPackageReference "LBTATools" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/bhlvoong/LBTATools";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		521CCA602BBABF1400C0CED0 /* OverlayContainer */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 521CCA5F2BBABF1400C0CED0 /* XCRemoteSwiftPackageReference "OverlayContainer" */;
+			productName = OverlayContainer;
+		};
+		52FE6F552BB96BB100690434 /* LBTATools */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 52FE6F542BB96BB100690434 /* XCRemoteSwiftPackageReference "LBTATools" */;
+			productName = LBTATools;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 52FE6F192BB9645400690434 /* Project object */;
+}
