@@ -10,13 +10,18 @@ import SwiftUI
 import LBTATools
 
 
-class SearchViewController: UIViewController {
+
+class SearchViewController: UIViewController, UIGestureRecognizerDelegate {
     // TODO: Create a tableview with a header and add a search bar on the header
 
     // MARK: - Properties
+    
     lazy var searchBarView: UISearchBar = {
         let searchBar = UISearchBar()
         searchBar.backgroundImage = UIImage()
+        searchBar.placeholder = "Search ATMs"
+        searchBar.showsBookmarkButton = true
+        searchBar.setImage(UIImage(systemName: "line.3.horizontal.decrease.circle"), for: .bookmark, state: .normal)
         return searchBar
     }()
     
@@ -25,9 +30,12 @@ class SearchViewController: UIViewController {
         table.backgroundColor = .clear
         table.delegate = self
         table.dataSource = self
-//        table.isScrollEnabled = false
+        table.showsVerticalScrollIndicator = false
+        table.alwaysBounceVertical = true
         return table
     }()
+    
+    var offSet: Double = -1
     
     
     // MARK: - Lifecycle
@@ -35,6 +43,7 @@ class SearchViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         setupView()
+
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -44,35 +53,9 @@ class SearchViewController: UIViewController {
     
     // MARK: - Methods
     
-//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//        let velocity = scrollView.panGestureRecognizer.velocity(in: tableView)
-//        if velocity.x != 0.0 || velocity.y != 0.0 {
-//            // user scrolled the tableview
-//            print("X: \(velocity.x); Y: \(velocity.y)")
-//            print("Velocity: \(velocity)")
-//
-//        }
-//
-//        if tableView.contentOffset == .zero {
-//            tableView.isScrollEnabled = false
-//        }
-//    }
-    
-    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-        let translation = scrollView.panGestureRecognizer.translation(in: scrollView.superview)
-        print("X: \(translation.x); Y: \(translation.y)")
-        print("Velocity: \(translation)")
-        if translation.y > 0.1 {
-            // swipes from top to bottom of screen -> down
-            tableView.isScrollEnabled = false
-        } else {
-            // swipes from bottom to top of screen -> up
-        }
-    }
-    
     // SetupViews
     private func setupView() {
-        [searchBarView, tableView].forEach { view.addSubview($0)}
+        [searchBarView, tableView].forEach{view.addSubview($0)}
         searchBarView.anchor(
             top: view.topAnchor,
             leading: view.leadingAnchor,
@@ -115,6 +98,9 @@ extension SearchViewController: UITableViewDelegate & UITableViewDataSource {
         return cell
     }
     
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+            return true
+    }
 
 }
 

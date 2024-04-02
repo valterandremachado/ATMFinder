@@ -31,6 +31,7 @@ class MapViewController: UIViewController {
         // Do any additional setup after loading the view.
         view.backgroundColor = .cyan
 //        setupViews()
+
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -50,6 +51,17 @@ class MapViewController: UIViewController {
 
     }
     
+    func showMyViewControllerInACustomizedSheet() {
+        let viewControllerToPresent = SearchViewController()
+        if let sheet = viewControllerToPresent.sheetPresentationController {
+            sheet.detents = [.medium(), .large()]
+            sheet.largestUndimmedDetentIdentifier = .medium
+            sheet.prefersScrollingExpandsWhenScrolledToEdge = false
+            sheet.prefersEdgeAttachedInCompactHeight = true
+            sheet.widthFollowsPreferredContentSizeWhenEdgeAttached = true
+        }
+        present(viewControllerToPresent, animated: true, completion: nil)
+    }
     
     
 }

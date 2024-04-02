@@ -27,7 +27,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
-        
         containerController.delegate = self
         containerController.viewControllers = [
             mapsController,
@@ -73,8 +72,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 // MARK: - OverlayContainerViewControllerDelegate
 extension SceneDelegate: OverlayContainerViewControllerDelegate {
     
-    func overlayContainerViewController(_ containerViewController: OverlayContainerViewController, shouldStartDraggingOverlay overlayViewController: UIViewController, at point: CGPoint, in coordinateSpace: UICoordinateSpace) -> Bool {
-        return true
+    // Enables searchController have an uniform scrolling with its tableView
+    func overlayContainerViewController(
+        _ containerViewController: OverlayContainerViewController,
+        scrollViewDrivingOverlay overlayViewController: UIViewController
+    ) -> UIScrollView? {
+        return (overlayViewController as? SearchViewController)?.tableView
     }
     
     // numberOfNotches
@@ -87,25 +90,15 @@ extension SceneDelegate: OverlayContainerViewControllerDelegate {
         if let screenFrame = self.window?.safeAreaLayoutGuide.layoutFrame {
             switch OverlayNotch.allCases[index] {
             case .maximum:
-                searchController.tableView.isScrollEnabled = true
-                return availableSpace - (screenFrame.minY + 5) //* 3 / 4
+                return availableSpace - (screenFrame.minY + 5)
             case .medium:
                 return availableSpace / 2
             case .minimum:
-                return availableSpace * 1 / 4
+                return availableSpace * 1 / 5
             }
         }
         return -1.0
     }
-    
-    func overlayContainerViewController(_ containerViewController: OverlayContainerViewController, didMoveOverlay overlayViewController: UIViewController, toNotchAt index: Int) {
-        // Enables tableView scrolling ability only when searchViewController is on its max height
-        switch index {
-        case 2:
-            searchController.tableView.isScrollEnabled = true
-        default:
-            searchController.tableView.isScrollEnabled = false
-        }
-    }
+
 }
 
