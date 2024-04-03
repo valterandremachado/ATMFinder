@@ -14,14 +14,13 @@ protocol SearchControllerEventDelegate: AnyObject {
     func searchBarCancelButtonClicked(_ isClicked: Bool)
 }
 
+// TODO: Create a tableview with a header and add a search bar on the header
 class SearchViewController: UIViewController {
-    // TODO: Create a tableview with a header and add a search bar on the header
 
     // MARK: - Properties
     weak var searchEventDelegate: SearchControllerEventDelegate?
-    static let shared = SearchViewController()
     
-    lazy var profileButton: UIButton = {
+    lazy var menuButton: UIButton = {
         let button = UIButton(type: .system)
         button.setImage(UIImage(systemName: "person.circle.fill")?.withRenderingMode(.alwaysOriginal).imageResized(to: .init(width: 33, height: 32)), for: .normal)
 
@@ -41,7 +40,7 @@ class SearchViewController: UIViewController {
     }()
     
     lazy var searchViewHstack: UIStackView = {
-        let stack = UIStackView(arrangedSubviews: [searchBarView, profileButton])
+        let stack = UIStackView(arrangedSubviews: [searchBarView, menuButton])
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.axis = .horizontal
         stack.alignment = .fill
@@ -58,9 +57,6 @@ class SearchViewController: UIViewController {
         table.alwaysBounceVertical = true
         return table
     }()
-    
-    var offSet: Double = -1
-    
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
