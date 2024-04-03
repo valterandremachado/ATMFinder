@@ -13,6 +13,7 @@ enum OverlayNotch: Int, CaseIterable {
 }
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
+    
     // MARK: - Properties
     var window: UIWindow?
     let containerController = OverlayContainerViewController()
@@ -28,6 +29,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         containerController.delegate = self
+        searchController.searchEventDelegate = self
         containerController.viewControllers = [
             mapsController,
             searchController
@@ -69,9 +71,22 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 }
 
+// MARK: - SearchControllerEventDelegate
+extension SceneDelegate: SearchControllerEventDelegate {
+    func searchBarDidEditing(_ isEditing: Bool) {
+        self.containerController.moveOverlay(toNotchAt: 2, animated: true)
+        print("isEditing")
+    }
+    
+    func searchBarCancelButtonClicked(_ isClicked: Bool) {
+        print("isClicked")
+        containerController.moveOverlay(toNotchAt: 0, animated: true)
+    }
+}
+
 // MARK: - OverlayContainerViewControllerDelegate
 extension SceneDelegate: OverlayContainerViewControllerDelegate {
-    
+        
     // Enables searchController have an uniform scrolling with its tableView
     func overlayContainerViewController(
         _ containerViewController: OverlayContainerViewController,
@@ -98,6 +113,16 @@ extension SceneDelegate: OverlayContainerViewControllerDelegate {
             }
         }
         return -1.0
+    }
+    
+    func overlayContainerViewController(_ containerViewController: OverlayContainerViewController, willMoveOverlay overlayViewController: UIViewController, toNotchAt index: Int) {
+        // Allow editing and hide menuButton only when OverLay is on full size
+        if index != 2 {
+            searchController.profileButton.isHidden = false
+            searchController.searchBarView.endEditing(true)
+        } else {
+            searchController.profileButton.isHidden = true
+        }
     }
 
 }

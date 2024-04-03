@@ -9,20 +9,44 @@ import UIKit
 import SwiftUI
 import LBTATools
 
+protocol SearchControllerEventDelegate: AnyObject {
+    func searchBarDidEditing(_ isEditing: Bool)
+    func searchBarCancelButtonClicked(_ isClicked: Bool)
+}
 
-
-class SearchViewController: UIViewController, UIGestureRecognizerDelegate {
+class SearchViewController: UIViewController {
     // TODO: Create a tableview with a header and add a search bar on the header
 
     // MARK: - Properties
+    weak var searchEventDelegate: SearchControllerEventDelegate?
+    static let shared = SearchViewController()
+    
+    lazy var profileButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setImage(UIImage(systemName: "person.circle.fill")?.withRenderingMode(.alwaysOriginal).imageResized(to: .init(width: 33, height: 32)), for: .normal)
+
+//        button.backgroundColor = .yellow
+        button.withSize(.init(width: 40, height: 40))
+        return button
+    }()
     
     lazy var searchBarView: UISearchBar = {
         let searchBar = UISearchBar()
         searchBar.backgroundImage = UIImage()
         searchBar.placeholder = "Search ATMs"
+        searchBar.delegate = self
         searchBar.showsBookmarkButton = true
-        searchBar.setImage(UIImage(systemName: "line.3.horizontal.decrease.circle"), for: .bookmark, state: .normal)
+        searchBar.setImage(UIImage(systemName: "line.3.horizontal.decrease.circle.fill")?.withRenderingMode(.alwaysOriginal).imageResized(to: .init(width: 25, height: 25)), for: .bookmark, state: .normal)
         return searchBar
+    }()
+    
+    lazy var searchViewHstack: UIStackView = {
+        let stack = UIStackView(arrangedSubviews: [searchBarView, profileButton])
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        stack.axis = .horizontal
+        stack.alignment = .fill
+        stack.distribution = .fill
+        return stack
     }()
     
     lazy var tableView: UITableView = {
@@ -55,53 +79,80 @@ class SearchViewController: UIViewController, UIGestureRecognizerDelegate {
     
     // SetupViews
     private func setupView() {
-        [searchBarView, tableView].forEach{view.addSubview($0)}
-        searchBarView.anchor(
+        [searchViewHstack, tableView].forEach{view.addSubview($0)}
+        searchViewHstack.anchor(
             top: view.topAnchor,
             leading: view.leadingAnchor,
             bottom: nil,
             trailing: view.trailingAnchor,
-            padding: .init(top: 10, left: 15, bottom: 0, right: 15)
+            padding: .init(top: 25, left: 15, bottom: 0, right: 15)
         )
         
         tableView.anchor(
-            top: searchBarView.bottomAnchor,
+            top: searchViewHstack.bottomAnchor,
             leading: view.leadingAnchor,
             bottom: view.bottomAnchor,
             trailing: view.trailingAnchor,
-            padding: .init(top: 0, left: 15, bottom: 0, right: 15)
+            padding: .init(top: 15, left: 15, bottom: 0, right: 15)
         )
     }
     
 }
 
+// MARK: - UISearchBarDelegate
+extension SearchViewController: UISearchBarDelegate {
+    
+    func searchBarShouldBeginEditing(
+        _ searchBar: UISearchBar
+    ) -> Bool {
+        searchBar.showsCancelButton = true
+        searchEventDelegate?.searchBarDidEditing(searchBar.searchTextField.isEditing)
+        return true
+    }
+    
+    func searchBarCancelButtonClicked(
+        _ searchBar: UISearchBar
+    ) {
+        searchBar.endEditing(true)
+        searchBar.showsCancelButton = false
+        searchEventDelegate?.searchBarCancelButtonClicked(true)
+    }
+}
 // MARK: - TableView Delegate & Data Source
 extension SearchViewController: UITableViewDelegate & UITableViewDataSource {
     
     // Fix tableView grouped style header gap
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    func tableView(
+        _ tableView: UITableView,
+        viewForHeaderInSection section: Int
+    ) -> UIView? {
         return UIView()
     }
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    
+    func tableView(
+        _ tableView: UITableView,
+        heightForHeaderInSection section: Int
+    ) -> CGFloat {
         return .zero
     }
     
     // numberOfRowsInSection
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(
+        _ tableView: UITableView,
+        numberOfRowsInSection section: Int
+    ) -> Int {
         return 20
     }
     
     // cellForRowAt
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(
+        _ tableView: UITableView,
+        cellForRowAt indexPath: IndexPath
+    ) -> UITableViewCell {
         let cell = UITableViewCell()
 //        cell.backgroundColor = .red
         return cell
     }
-    
-    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
-            return true
-    }
-
 }
 
 
