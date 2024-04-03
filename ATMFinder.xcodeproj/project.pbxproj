@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		521CCA5E2BBAAEA600C0CED0 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521CCA5D2BBAAEA600C0CED0 /* SearchViewController.swift */; };
 		521CCA612BBABF1400C0CED0 /* OverlayContainer in Frameworks */ = {isa = PBXBuildFile; productRef = 521CCA602BBABF1400C0CED0 /* OverlayContainer */; };
-		521CCA642BBAC8DA00C0CED0 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521CCA632BBAC8DA00C0CED0 /* Extensions.swift */; };
+		5223CE372BBD5D94003D9156 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5223CE362BBD5D94003D9156 /* Extensions.swift */; };
 		52FE6F252BB9645500690434 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FE6F242BB9645500690434 /* AppDelegate.swift */; };
 		52FE6F272BB9645500690434 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FE6F262BB9645500690434 /* SceneDelegate.swift */; };
 		52FE6F292BB9645500690434 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FE6F282BB9645500690434 /* MapViewController.swift */; };
@@ -40,7 +40,7 @@
 
 /* Begin PBXFileReference section */
 		521CCA5D2BBAAEA600C0CED0 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
-		521CCA632BBAC8DA00C0CED0 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = ../../../../../Downloads/Extensions.swift; sourceTree = "<group>"; };
+		5223CE362BBD5D94003D9156 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		52FE6F212BB9645500690434 /* ATMFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ATMFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52FE6F242BB9645500690434 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52FE6F262BB9645500690434 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -85,7 +85,7 @@
 		521CCA622BBAC8BA00C0CED0 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				521CCA632BBAC8DA00C0CED0 /* Extensions.swift */,
+				5223CE362BBD5D94003D9156 /* Extensions.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -280,7 +280,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				521CCA642BBAC8DA00C0CED0 /* Extensions.swift in Sources */,
+				5223CE372BBD5D94003D9156 /* Extensions.swift in Sources */,
 				52FE6F292BB9645500690434 /* MapViewController.swift in Sources */,
 				52FE6F252BB9645500690434 /* AppDelegate.swift in Sources */,
 				521CCA5E2BBAAEA600C0CED0 /* SearchViewController.swift in Sources */,
