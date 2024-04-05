@@ -8,30 +8,60 @@
 import SwiftUI
 import UIKit
 import LBTATools
+import MapboxMaps
+import CoreLocation
+import MapKit
+import Contacts
 
 
-class MapViewController: UIViewController {
+extension CLPlacemark {
+    /// street name, eg. Infinite Loop
+    var streetName: String? { thoroughfare }
+    /// // eg. 1
+    var streetNumber: String? { subThoroughfare }
+    /// city, eg. Cupertino
+    var city: String? { locality }
+    /// neighborhood, common name, eg. Mission District
+    var neighborhood: String? { subLocality }
+    /// state, eg. CA
+    var state: String? { administrativeArea }
+    /// county, eg. Santa Clara
+    var county: String? { subAdministrativeArea }
+    /// zip code, eg. 95014
+    var zipCode: String? { postalCode }
+    /// postal address formatted
+    @available(iOS 11.0, *)
+    var postalAddressFormatted: String? {
+        guard let postalAddress = postalAddress else { return nil }
+        return CNPostalAddressFormatter().string(from: postalAddress)
+    }
+}
+
+extension CLLocation {
+    func placemark(completion: @escaping (_ placemark: CLPlacemark?, _ error: Error?) -> ()) {
+        CLGeocoder().reverseGeocodeLocation(self) { completion($0?.first, $1) }
+    }
+}
+
+class MapViewController: UIViewController, AppleLocationProviderDelegate, CLLocationManagerDelegate {
+    
 
     // MARK: - Properties
-    lazy var menuButton: UIButton = {
-        let button = UIButton(type: .custom)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.imageView?.contentMode = .scaleAspectFit
-        button.setImage(UIImage(systemName: "line.3.horizontal"), for: .normal)
-//        button.setTitle("Button", for: .normal)
-        button.withWidth(50)
-        button.withHeight(50)
-        button.backgroundColor = .red
-        return button
-    }()
+    private var mapView: MapView!
+    let locationProvider = AppleLocationProvider()
+    let locationManager = CLLocationManager()
+
 
     // MARK: - Inits
+    override func loadView() {
+        super.loadView()
+        setupViews()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        view.backgroundColor = .cyan
-//        setupViews()
-
+        view.backgroundColor = .white
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -39,29 +69,103 @@ class MapViewController: UIViewController {
     }
 
     // MARK: - Methods
-    func setupViews() {
-        [menuButton].forEach { view.addSubview($0) }
-        menuButton.anchor(
-            top: view.safeAreaLayoutGuide.topAnchor,
-            leading: view.safeAreaLayoutGuide.leadingAnchor,
-            bottom: nil,
-            trailing: nil,
-            padding: .init(top: 15, left: 15, bottom: 0, right: 0)
-        )
-
+    private func setupViews() {
+        
+        setupMaps()
+        configaLocationManager()
     }
     
-    func showMyViewControllerInACustomizedSheet() {
-        let viewControllerToPresent = SearchViewController()
-        if let sheet = viewControllerToPresent.sheetPresentationController {
-            sheet.detents = [.medium(), .large()]
-            sheet.largestUndimmedDetentIdentifier = .medium
-            sheet.prefersScrollingExpandsWhenScrolledToEdge = false
-            sheet.prefersEdgeAttachedInCompactHeight = true
-            sheet.widthFollowsPreferredContentSizeWhenEdgeAttached = true
-        }
-        present(viewControllerToPresent, animated: true, completion: nil)
+    func setupMaps() {
+//        mapView = MapView(frame: view.bounds)
+//        mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+//        let center = CLLocationCoordinate2D(latitude: 0, longitude: 0)
+//        let cameraOptions = CameraOptions(center: center, zoom: 15, bearing: 0, pitch: 45)
+//        mapView.mapboxMap.setCamera(to: cameraOptions)
+//        mapView.mapboxMap.styleURI = .dark
+////        mapView.ornaments.options.scaleBar.visibility = .visible
+//        mapView.location.override(provider: locationProvider)
+//        locationProvider.delegate = self
+//
+//        view.addSubview(mapView)
     }
+    
+    func configaLocationManager() {
+        self.locationManager.delegate = self
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        self.locationManager.requestWhenInUseAuthorization()
+        self.locationManager.startUpdatingLocation()
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
+    {
+        // Get user location
+        guard let location = locations.last else { return }
+        let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+        location.placemark { placemark, error in
+            guard let placemark = placemark else {
+                print("Error:", error ?? "nil")
+                return
+            }
+            print("Location: \(placemark.postalAddressFormatted ?? "")")
+        }
+        
+        // Config MapView
+        mapView = MapView(frame: view.bounds)
+        mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        let cameraOptions = CameraOptions(center: center, zoom: 15, bearing: 0, pitch: 0)
+        mapView.mapboxMap.setCamera(to: cameraOptions)
+//        mapView.mapboxMap.styleURI = .dark
+//        mapView.location.options.puckType = .puck2D()
+        let configuration = Puck2DConfiguration.makeDefault(showBearing: true)
+        mapView.location.options.puckType = .puck2D(configuration)
+        view.addSubview(mapView)
+
+        // TODO: - Show exact user location displayed with a pulsing icon
+
+        // TODO: - Annotate ATM array to be display on the map with its respective icons (maybe nane)
+        // Annotations
+//        var pointAnnotation = PointAnnotation(coordinate: CLLocationCoordinate2D(latitude: 0.0, longitude: 0.0))
+//        pointAnnotation.image = .init(image: UIImage(systemName: "image")!, name: "image")
+//        pointAnnotation.iconAnchor = .bottom
+//        pointAnnotation.textField = "ATM Name"
+//        let pointAnnotationManager = mapView.annotations.makePointAnnotationManager()
+//        pointAnnotationManager.annotations = [pointAnnotation]
+
+        // Delegates
+        locationProvider.delegate = self
+        self.locationManager.stopUpdatingLocation()
+    }
+    
+    private func  locationManager(manager: CLLocationManager, didFailWithError error: NSError)
+    {
+        print ("Errors:" + error.localizedDescription)
+    }
+    
+    
+    // Method that will be called as a result of the delegate below
+    func requestPermissionsButtonTapped() {
+        locationProvider.requestTemporaryFullAccuracyAuthorization(withPurposeKey: "LocationAccuracyAuthorizationDescription")
+    }
+
+    func appleLocationProvider(
+           _ locationProvider: MapboxMaps.AppleLocationProvider,
+           didChangeAccuracyAuthorization accuracyAuthorization: CLAccuracyAuthorization
+    ) {
+        if accuracyAuthorization == .reducedAccuracy {
+            // Perform an action in response to the new change in accuracy
+            mapView.location.override(provider: locationProvider)
+        }
+    }
+
+    func appleLocationProvider(_ locationProvider: MapboxMaps.AppleLocationProvider, didFailWithError error: Error) {
+        print("didFailWithError")
+    }
+    
+    func appleLocationProviderShouldDisplayHeadingCalibration(_ locationProvider: MapboxMaps.AppleLocationProvider) -> Bool {
+        print("locationProvider")
+        return true
+    }
+    
     
     
 }

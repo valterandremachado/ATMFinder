@@ -30,6 +30,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         containerController.delegate = self
         searchController.searchEventDelegate = self
+//        mapsController.setupMaps()
+        print("SceneDelegate")
         containerController.viewControllers = [
             mapsController,
             searchController
@@ -118,10 +120,10 @@ extension SceneDelegate: OverlayContainerViewControllerDelegate {
     func overlayContainerViewController(_ containerViewController: OverlayContainerViewController, willMoveOverlay overlayViewController: UIViewController, toNotchAt index: Int) {
         // Allow editing and hide menuButton only when OverLay is on full size
         if index != 2 {
-            searchController.profileButton.isHidden = false
+            searchController.menuButton.isHidden = false
             searchController.searchBarView.endEditing(true)
         } else {
-            searchController.profileButton.isHidden = true
+            searchController.menuButton.isHidden = true
         }
     }
 

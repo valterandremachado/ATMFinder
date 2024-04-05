@@ -14,6 +14,7 @@ protocol SearchControllerEventDelegate: AnyObject {
     func searchBarCancelButtonClicked(_ isClicked: Bool)
 }
 
+
 // TODO: Create a tableview with a header and add a search bar on the header
 class SearchViewController: UIViewController {
 
@@ -22,8 +23,16 @@ class SearchViewController: UIViewController {
     
     lazy var menuButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setImage(UIImage(systemName: "person.circle.fill")?.withRenderingMode(.alwaysOriginal).imageResized(to: .init(width: 33, height: 32)), for: .normal)
-
+        button.setImage(
+            UIImage(
+                systemName: "line.3.horizontal"
+            )?.imageResize(
+                sizeChange: .init(width: 32, height: 28)
+            ).withTintColor(
+                .systemBlue,
+                renderingMode: .alwaysTemplate
+            ), for: .normal
+        )
 //        button.backgroundColor = .yellow
         button.withSize(.init(width: 40, height: 40))
         return button
@@ -35,7 +44,14 @@ class SearchViewController: UIViewController {
         searchBar.placeholder = "Search ATMs"
         searchBar.delegate = self
         searchBar.showsBookmarkButton = true
-        searchBar.setImage(UIImage(systemName: "line.3.horizontal.decrease.circle.fill")?.withRenderingMode(.alwaysOriginal).imageResized(to: .init(width: 25, height: 25)), for: .bookmark, state: .normal)
+        searchBar.setImage(
+            UIImage(
+                systemName: "line.3.horizontal.decrease.circle.fill"
+            )?.withRenderingMode(.alwaysOriginal).imageResized(
+                to: .init(width: 25, height: 25)
+            ),
+            for: .bookmark, state: .normal
+        )
         return searchBar
     }()
     

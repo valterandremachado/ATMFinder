@@ -10,6 +10,7 @@
 		521CCA5E2BBAAEA600C0CED0 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521CCA5D2BBAAEA600C0CED0 /* SearchViewController.swift */; };
 		521CCA612BBABF1400C0CED0 /* OverlayContainer in Frameworks */ = {isa = PBXBuildFile; productRef = 521CCA602BBABF1400C0CED0 /* OverlayContainer */; };
 		5223CE372BBD5D94003D9156 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5223CE362BBD5D94003D9156 /* Extensions.swift */; };
+		52BB8AA62BBEE00900D5C949 /* MapboxMaps in Frameworks */ = {isa = PBXBuildFile; productRef = 52BB8AA52BBEE00900D5C949 /* MapboxMaps */; };
 		52FE6F252BB9645500690434 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FE6F242BB9645500690434 /* AppDelegate.swift */; };
 		52FE6F272BB9645500690434 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FE6F262BB9645500690434 /* SceneDelegate.swift */; };
 		52FE6F292BB9645500690434 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FE6F282BB9645500690434 /* MapViewController.swift */; };
@@ -60,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52BB8AA62BBEE00900D5C949 /* MapboxMaps in Frameworks */,
 				52FE6F562BB96BB100690434 /* LBTATools in Frameworks */,
 				521CCA612BBABF1400C0CED0 /* OverlayContainer in Frameworks */,
 			);
@@ -161,6 +163,7 @@
 			packageProductDependencies = (
 				52FE6F552BB96BB100690434 /* LBTATools */,
 				521CCA602BBABF1400C0CED0 /* OverlayContainer */,
+				52BB8AA52BBEE00900D5C949 /* MapboxMaps */,
 			);
 			productName = ATMFinder;
 			productReference = 52FE6F212BB9645500690434 /* ATMFinder.app */;
@@ -237,6 +240,7 @@
 			packageReferences = (
 				52FE6F542BB96BB100690434 /* XCRemoteSwiftPackageReference "LBTATools" */,
 				521CCA5F2BBABF1400C0CED0 /* XCRemoteSwiftPackageReference "OverlayContainer" */,
+				52BB8AA42BBEE00900D5C949 /* XCRemoteSwiftPackageReference "mapbox-maps-ios" */,
 			);
 			productRefGroup = 52FE6F222BB9645500690434 /* Products */;
 			projectDirPath = "";
@@ -632,6 +636,14 @@
 				minimumVersion = 3.0.0;
 			};
 		};
+		52BB8AA42BBEE00900D5C949 /* XCRemoteSwiftPackageReference "mapbox-maps-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mapbox/mapbox-maps-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.0.0;
+			};
+		};
 		52FE6F542BB96BB100690434 /* XCRemoteSwiftPackageReference "LBTATools" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/bhlvoong/LBTATools";
@@ -647,6 +659,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 521CCA5F2BBABF1400C0CED0 /* XCRemoteSwiftPackageReference "OverlayContainer" */;
 			productName = OverlayContainer;
+		};
+		52BB8AA52BBEE00900D5C949 /* MapboxMaps */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 52BB8AA42BBEE00900D5C949 /* XCRemoteSwiftPackageReference "mapbox-maps-ios" */;
+			productName = MapboxMaps;
 		};
 		52FE6F552BB96BB100690434 /* LBTATools */ = {
 			isa = XCSwiftPackageProductDependency;

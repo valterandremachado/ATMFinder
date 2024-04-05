@@ -2,6 +2,15 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>Your precise location is used to calculate turn-by-turn directions, show your location on the map, and help improve the map.</string>
+    <key>NSLocationTemporaryUsageDescriptionDictionary</key>
+    <dict>
+      <key>LocationAccuracyAuthorizationDescription</key>
+      <string>Please enable precise location. Turn-by-turn directions only work when precise location data is available.</string>
+    </dict>
+	<key>MBXAccessToken</key>
+	<string>pk.eyJ1IjoidmFsdGVyYW5kcmVtYWNoYWRvIiwiYSI6ImNsdWwyb3BsNDBlYWwybG10eWxiZTc4MHEifQ.dqn4Mi9W0huM5ZLYbQPIIQ</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

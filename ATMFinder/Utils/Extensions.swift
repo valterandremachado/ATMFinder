@@ -686,6 +686,12 @@ extension UIView {
 
 
 extension UIImageView {
+    func setImageColor(color: UIColor) {
+       let templateImage = self.image?.withRenderingMode(.alwaysTemplate)
+       self.image = templateImage
+       self.tintColor = color
+     }
+    
     public func maskCircle(anyImage: UIImage) {
         self.contentMode = UIView.ContentMode.scaleAspectFill
         self.layer.cornerRadius = self.frame.height / 2
