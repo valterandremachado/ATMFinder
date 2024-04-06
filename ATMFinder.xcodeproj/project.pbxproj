@@ -11,6 +11,7 @@
 		521CCA5E2BBAAEA600C0CED0 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521CCA5D2BBAAEA600C0CED0 /* SearchViewController.swift */; };
 		521CCA612BBABF1400C0CED0 /* OverlayContainer in Frameworks */ = {isa = PBXBuildFile; productRef = 521CCA602BBABF1400C0CED0 /* OverlayContainer */; };
 		5223CE372BBD5D94003D9156 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5223CE362BBD5D94003D9156 /* Extensions.swift */; };
+		5255689E2BC0F6B8004C2A67 /* GooglePlaces in Frameworks */ = {isa = PBXBuildFile; productRef = 5255689D2BC0F6B8004C2A67 /* GooglePlaces */; };
 		52BB8AA62BBEE00900D5C949 /* MapboxMaps in Frameworks */ = {isa = PBXBuildFile; productRef = 52BB8AA52BBEE00900D5C949 /* MapboxMaps */; };
 		52FE6F252BB9645500690434 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FE6F242BB9645500690434 /* AppDelegate.swift */; };
 		52FE6F272BB9645500690434 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FE6F262BB9645500690434 /* SceneDelegate.swift */; };
@@ -64,6 +65,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				52BB8AA62BBEE00900D5C949 /* MapboxMaps in Frameworks */,
+				5255689E2BC0F6B8004C2A67 /* GooglePlaces in Frameworks */,
 				52FE6F562BB96BB100690434 /* LBTATools in Frameworks */,
 				521CCA612BBABF1400C0CED0 /* OverlayContainer in Frameworks */,
 			);
@@ -167,6 +169,7 @@
 				52FE6F552BB96BB100690434 /* LBTATools */,
 				521CCA602BBABF1400C0CED0 /* OverlayContainer */,
 				52BB8AA52BBEE00900D5C949 /* MapboxMaps */,
+				5255689D2BC0F6B8004C2A67 /* GooglePlaces */,
 			);
 			productName = ATMFinder;
 			productReference = 52FE6F212BB9645500690434 /* ATMFinder.app */;
@@ -244,6 +247,7 @@
 				52FE6F542BB96BB100690434 /* XCRemoteSwiftPackageReference "LBTATools" */,
 				521CCA5F2BBABF1400C0CED0 /* XCRemoteSwiftPackageReference "OverlayContainer" */,
 				52BB8AA42BBEE00900D5C949 /* XCRemoteSwiftPackageReference "mapbox-maps-ios" */,
+				5255689C2BC0F6B8004C2A67 /* XCRemoteSwiftPackageReference "ios-places-sdk" */,
 			);
 			productRefGroup = 52FE6F222BB9645500690434 /* Products */;
 			projectDirPath = "";
@@ -459,6 +463,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = LB584B36MB;
@@ -475,6 +480,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.vmachado.developer.ATMFinder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -640,6 +646,14 @@
 				minimumVersion = 3.0.0;
 			};
 		};
+		5255689C2BC0F6B8004C2A67 /* XCRemoteSwiftPackageReference "ios-places-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/googlemaps/ios-places-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.0;
+			};
+		};
 		52BB8AA42BBEE00900D5C949 /* XCRemoteSwiftPackageReference "mapbox-maps-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/mapbox/mapbox-maps-ios.git";
@@ -663,6 +677,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 521CCA5F2BBABF1400C0CED0 /* XCRemoteSwiftPackageReference "OverlayContainer" */;
 			productName = OverlayContainer;
+		};
+		5255689D2BC0F6B8004C2A67 /* GooglePlaces */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5255689C2BC0F6B8004C2A67 /* XCRemoteSwiftPackageReference "ios-places-sdk" */;
+			productName = GooglePlaces;
 		};
 		52BB8AA52BBEE00900D5C949 /* MapboxMaps */ = {
 			isa = XCSwiftPackageProductDependency;

@@ -12,7 +12,6 @@ import MapboxMaps
 import CoreLocation
 
 
-
 class MapViewController: UIViewController, AppleLocationProviderDelegate, CLLocationManagerDelegate {
     
 
@@ -84,9 +83,11 @@ class MapViewController: UIViewController, AppleLocationProviderDelegate, CLLoca
         mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         let cameraOptions = CameraOptions(center: center, zoom: 15, bearing: 0, pitch: 0)
         mapView.mapboxMap.setCamera(to: cameraOptions)
-//        mapView.mapboxMap.styleURI = .dark
-//        mapView.location.options.puckType = .puck2D()
-        let configuration = Puck2DConfiguration.makeDefault(showBearing: true)
+        mapView.mapboxMap.styleURI = .dark
+
+        var configuration = Puck2DConfiguration.makeDefault(showBearing: true)
+        configuration.pulsing = .default
+
         mapView.location.options.puckType = .puck2D(configuration)
         view.addSubview(mapView)
 
@@ -123,7 +124,7 @@ class MapViewController: UIViewController, AppleLocationProviderDelegate, CLLoca
     ) {
         if accuracyAuthorization == .reducedAccuracy {
             // Perform an action in response to the new change in accuracy
-            mapView.location.override(provider: locationProvider)
+//            mapView.location.override(provider: locationProvider)
         }
     }
 

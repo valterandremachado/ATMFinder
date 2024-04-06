@@ -1,6 +1,15 @@
 {
   "pins" : [
     {
+      "identity" : "ios-places-sdk",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/googlemaps/ios-places-sdk",
+      "state" : {
+        "revision" : "2a9c7305a0e5f83b9acdccfc74eb545ffeb476c3",
+        "version" : "8.5.0"
+      }
+    },
+    {
       "identity" : "lbtatools",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/bhlvoong/LBTATools",
